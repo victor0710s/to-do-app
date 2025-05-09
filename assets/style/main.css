@@ -1,0 +1,13 @@
+:root {
+    --font-color: #fff
+}
+
+body {
+    background-color: rgb(41, 41, 41);
+    color: var(--font-color);
+}
+
+li {
+    list-style: none;
+    font-size: 1.2rem;
+}
