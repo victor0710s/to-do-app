@@ -23,9 +23,22 @@ li {
     background-color: silver;
 }
 
+#task-list {
+  width: 400px;
+}
+
 #task-list li {
-    background-color: rgba(0, 0, 0, 0.877);
+    background-color: rgba(0, 0, 0, 0.789);
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
-} 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#task-list li a {
+    margin-left: 100px;
+    text-decoration: none;
+    color: rgb(255, 169, 169);
+}

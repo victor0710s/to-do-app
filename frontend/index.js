@@ -3,11 +3,8 @@ import locale from "./locales/locales.js";
 const userLang = navigator.language || "en-US"; // Get the browser lang, but if not found use "en-US"
 const lang = locale[userLang] ? userLang : "en-US"; // If the browser lang is not in the locale object, use "en-US"
 
-
-
 let listElement = document.getElementById("task-list");
 let inputElement = document.getElementById("task-input");
-let btnElement = document.querySelector("#app button");
 
 const forms = document.getElementById('task-form');
 forms.addEventListener("submit", (e) => {
@@ -22,11 +19,18 @@ function renderTask() {
 
   tasks.map((task) => {
     let liElement = document.createElement('li');
-    let taskText = document.createTextNode(task);
+    let taskText = document.createElement('span')
+    taskText.textContent = task;
 
     let deleteLink = document.createElement('a');
     deleteLink.setAttribute('href', '#');
 
+    let deleteText = document.createTextNode("Delete")
+    deleteLink.appendChild(deleteText)
+
+    let pos = tasks.indexOf(task);
+
+    deleteLink.setAttribute("onclick", `deleteTask(${pos})`);
 
     liElement.appendChild(taskText);
     liElement.appendChild(deleteLink);
@@ -44,4 +48,12 @@ function addTask() {
     inputElement.value = '';
     renderTask();
   }
+}
+
+window.deleteTask = deleteTask; // It is not recommended, because it “pollutes” the global scope and can cause problems in larger apps.
+
+function deleteTask(pos) {
+  tasks.splice(pos, 1);
+  renderTask();
+  alert("Task deleted!!");
 }
