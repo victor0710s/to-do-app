@@ -13,9 +13,10 @@ li {
 }
 
 .container {
-    width: 70%;
+    width: 50%;
     margin: 50px auto;
     display: flex;
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
     flex-direction: column;

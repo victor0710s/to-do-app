@@ -1,24 +1,26 @@
-const form = document.getElementById('task-form');
-const input = document.getElementById('task-input');
-const list = document.getElementById('task-list');
+import locale from "./locales/locales.js";
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
+const userLang = navigator.language || "en-US"; // Get the browser lang, but if not found use "en-US"
+const lang = locale[userLang] ? userLang : "en-US"; // If the browser lang is not in the locale object, use "en-US"
 
-    const task = input.value.trim();
-    if (task !== '') {
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <label>
-            <input type="checkbox" class="task-checkbox">
-            <span>${task}</span>
-        </label>
-        <span class="edit-btn">Edit</span>
-        <span class="del-btn">Delete</span>
-        `;
-        list.appendChild(li);
 
-        input.value = ''; // Clear the input field
-    }
-});
 
+let listElement = document.getElementById("task-list");
+let inputElement = document.getElementById("task-input");
+let btnElement = document.querySelector("#app button");
+
+let tasks = [] // Array to hold tasks
+
+function addTask() {
+  if (inputElement.value === '') {
+    alert(locale[lang].inputAlert);
+    return false;
+  } else {
+    let newTask = inputElement.value;
+    tasks.push(newTask);
+    inputElement.value = '';
+  }
+}
+
+// btnElement.onclick = addTask; // it works but has the most modern and scalable mode for multiple listeners without overwriting
+btnElement.addEventListener("click", addTask);
