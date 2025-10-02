@@ -1,10 +1,27 @@
 import locale from "./locales/locales.js";
 
+let listElement = document.getElementById("task-list");
+let inputElement = document.getElementById("task-input");
+let tasks = [] // Array to hold tasks
+
+//* Locale Section
+
 const userLang = navigator.language || "en-US"; // Get the browser lang, but if not found use "en-US"
 const lang = locale[userLang] ? userLang : "en-US"; // If the browser lang is not in the locale object, use "en-US"
 
-let listElement = document.getElementById("task-list");
-let inputElement = document.getElementById("task-input");
+let h1Title = document.querySelector('h1')
+h1Title.innerHTML = locale[lang].title
+
+let btnLocale = document.querySelector('button')
+btnLocale.innerHTML = locale[lang].btnAddTask
+
+inputElement.setAttribute('placeholder', locale[lang].inputPlaceholder)
+
+
+
+
+//*-------------------------------------------------------
+
 
 const forms = document.getElementById('task-form');
 forms.addEventListener("submit", (e) => {
@@ -12,14 +29,13 @@ forms.addEventListener("submit", (e) => {
   addTask();
 })
 
-let tasks = [] // Array to hold tasks
 
 function renderTask() {
   listElement.innerHTML = '';
 
   tasks.map((task) => {
     let liElement = document.createElement('li');
-    let taskText = document.createElement('span')
+    let taskText = document.createElement('span');
     taskText.textContent = task;
 
     let deleteLink = document.createElement('a');
