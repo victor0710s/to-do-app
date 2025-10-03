@@ -9,6 +9,7 @@ let tasks = [] // Array to hold tasks
 const userLang = navigator.language || "en-US"; // Get the browser lang, but if not found use "en-US"
 const lang = locale[userLang] ? userLang : "en-US"; // If the browser lang is not in the locale object, use "en-US"
 
+
 let h1Title = document.querySelector('h1')
 h1Title.innerHTML = locale[lang].title
 
@@ -16,6 +17,7 @@ let btnLocale = document.querySelector('button')
 btnLocale.innerHTML = locale[lang].btnAddTask
 
 inputElement.setAttribute('placeholder', locale[lang].inputPlaceholder)
+document.title = locale[lang].pageTitle
 
 //*-------------------------------------------------------
 
