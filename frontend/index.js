@@ -2,7 +2,7 @@ import locale from "./locales/locales.js";
 
 let listElement = document.getElementById("task-list");
 let inputElement = document.getElementById("task-input");
-let tasks = [] // Array to hold tasks
+let tasks = JSON.parse(localStorage.getItem("@getTasks")) || []; // Searches tasks in local storage, if not found creates an empty array
 
 //* Locale Section
 
@@ -54,6 +54,8 @@ function renderTask() {
   })
 }
 
+renderTask(); // Loads the task list or empty array as soon as the user starts the application
+
 function addTask() {
   if (inputElement.value === '') {
     alert(locale[lang].inputAlert);
@@ -63,6 +65,7 @@ function addTask() {
     tasks.push(newTask);
     inputElement.value = '';
     renderTask();
+    storageTasks();
   }
 }
 
@@ -71,5 +74,10 @@ window.deleteTask = deleteTask; // It is not recommended, because it “pollutes
 function deleteTask(pos) {
   tasks.splice(pos, 1);
   renderTask();
+  storageTasks();
   alert(locale[lang].deleteAlert);
+}
+
+function storageTasks() {
+  localStorage.setItem("@getTasks", JSON.stringify(tasks));
 }
