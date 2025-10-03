@@ -1,4 +1,4 @@
-import locale from "./locales/locales.js";
+import locale from "../frontend/locales/locales.js";
 
 let listElement = document.getElementById("task-list");
 let inputElement = document.getElementById("task-input");
