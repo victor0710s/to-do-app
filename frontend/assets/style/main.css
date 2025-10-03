@@ -20,7 +20,69 @@ body {
   margin: 50px auto;
   padding: 35px 30px;
   border-radius: 10px;
+  border: 1px solid #bfbebe;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+h1 {
+  padding-bottom: 20px;
+  font-family: "Alan Sans", sans-serif;
+}
+
+#task-form {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 25px;
+  /* background-color: aqua; */
+}
+
+input[type="text"] {
+  /* width: 450px; */
+  border-radius: 3px;
+  border: 1px solid rgb(164, 164, 164);
+  margin-bottom: 10px;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 5px;
+}
+
+#task-form button {
+  width: 150px;
+  margin: 0 auto;
+  font-size: 14px;
+  background-color: #c6da41;
+  border: 1px solid #7d8a27;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #282d0c;
+  padding: 5px;
+}
+
+#task-list {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#task-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 35px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.827);
+  border-radius: 5px;
+  height: 40px;
+}
+
+#task-list li a {
+  text-decoration: none;
+  color: red;
+  font-family: "Unna", sans-serif;
 }
