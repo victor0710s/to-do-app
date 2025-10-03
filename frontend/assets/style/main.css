@@ -60,6 +60,7 @@ input[type="text"] {
   font-weight: 600;
   color: #282d0c;
   padding: 5px;
+  cursor: pointer;
 }
 
 #task-list {
