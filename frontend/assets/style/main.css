@@ -1,29 +1,26 @@
-/* Reset CSS */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-image: linear-gradient(135deg, #6b6b6b, #dddddd, #969696);
   height: 100vh;
+  background-image: linear-gradient(135deg, #6b6b6b, #dddddd, #969696);
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Style */
-
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 55%;
-  background-color: #ffffff5f;
   margin: 50px auto;
   padding: 35px 30px;
   border-radius: 10px;
   border: 1px solid #bfbebe;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  background-color: #ffffff5f;
 }
 
 h1 {
@@ -32,54 +29,52 @@ h1 {
 }
 
 #task-form {
-  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 350px;
   padding-bottom: 25px;
-  /* background-color: aqua; */
 }
 
 input[type="text"] {
-  /* width: 450px; */
+  height: 25px;
+  margin-bottom: 10px;
+  padding-left: 5px;
   border-radius: 3px;
   border: 1px solid rgb(164, 164, 164);
-  margin-bottom: 10px;
   font-size: 15px;
-  height: 25px;
-  padding-left: 5px;
 }
 
 #task-form button {
   width: 150px;
   margin: 0 auto;
-  font-size: 14px;
-  background-color: #c6da41;
+  padding: 5px;
   border: 1px solid #7d8a27;
   border-radius: 10px;
+  background-color: #c6da41;
+  font-size: 14px;
   font-weight: 600;
   color: #282d0c;
-  padding: 5px;
   cursor: pointer;
 }
 
 #task-list {
-  width: 50%;
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 #task-list li {
-  list-style: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0px 35px;
-  margin-bottom: 10px;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.827);
-  border-radius: 5px;
+  justify-content: space-between;
   height: 40px;
+  margin-bottom: 10px;
+  padding: 0px 35px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.827);
+  color: #ffffff;
+  list-style: none;
 }
 
 #task-list li a {

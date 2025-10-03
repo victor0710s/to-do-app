@@ -9,7 +9,6 @@ let tasks = JSON.parse(localStorage.getItem("@getTasks")) || []; // Searches tas
 const userLang = navigator.language || "en-US"; // Get the browser lang, but if not found use "en-US"
 const lang = locale[userLang] ? userLang : "en-US"; // If the browser lang is not in the locale object, use "en-US"
 
-
 let h1Title = document.querySelector('h1')
 h1Title.innerHTML = locale[lang].title
 
@@ -21,13 +20,11 @@ document.title = locale[lang].pageTitle
 
 //*-------------------------------------------------------
 
-
 const forms = document.getElementById('task-form');
 forms.addEventListener("submit", (e) => {
   e.preventDefault(); // Don't reload
   addTask();
 })
-
 
 function renderTask() {
   listElement.innerHTML = '';
