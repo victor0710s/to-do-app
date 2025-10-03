@@ -41,8 +41,9 @@ function renderTask() {
     let deleteLink = document.createElement('a');
     deleteLink.setAttribute('href', '#');
 
-    let deleteText = document.createTextNode("Delete")
-    deleteLink.appendChild(deleteText)
+    let deleteIcon = document.createElement('i')
+    deleteIcon.setAttribute('class', 'fa-solid fa-trash')
+    deleteLink.appendChild(deleteIcon)
 
     let pos = tasks.indexOf(task);
 
