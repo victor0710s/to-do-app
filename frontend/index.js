@@ -17,9 +17,6 @@ btnLocale.innerHTML = locale[lang].btnAddTask
 
 inputElement.setAttribute('placeholder', locale[lang].inputPlaceholder)
 
-
-
-
 //*-------------------------------------------------------
 
 
@@ -72,5 +69,5 @@ window.deleteTask = deleteTask; // It is not recommended, because it “pollutes
 function deleteTask(pos) {
   tasks.splice(pos, 1);
   renderTask();
-  alert("Task deleted!!");
+  alert(locale[lang].deleteAlert);
 }
